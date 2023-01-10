@@ -186,12 +186,8 @@ async def start(client, message):
             await asyncio.sleep(1) 
         return await sts.delete()
         
-    buttons = [
-                    [
-                        InlineKeyboardButton('Group 1', url='https://t.me/Cinema_Talkies_Group'),
-                        InlineKeyboardButton('Group 2', url='https://t.me/CinemaCompany_Group')
-                    ]
-                    ]
+        
+
     files_ = await get_file_details(file_id)           
     if not files_:
         pre, file_id = ((base64.urlsafe_b64decode(data + "=" * (-len(data) % 4))).decode("ascii")).split("_", 1)
