@@ -33,6 +33,9 @@ auth_users = [int(user) if id_pattern.search(user) else user for user in environ
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 PREMIUM_USER = [int(user) if id_pattern.search(user) else user for user in environ.get('PREMIUM_USER', '6082136901').split()]
 auth_channel = environ.get('AUTH_CHANNEL','-1002080628176')
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://techwithmoneyme:kbTo0sH1dn7U7H8U@cluster0.o9whxnl.mongodb.net/?retryWrites=true&w=majority")
+DATABASE_NAME = environ.get('DATABASE_NAME', "techwithmoneyme")
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 auth_grp = environ.get('AUTH_GROUP', '-1002080628176')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
